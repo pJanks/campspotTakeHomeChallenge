@@ -46,7 +46,7 @@ describe('formatDates', () => {
     assert.isArray(expectedFormattedInformation)
     assert.equal(expectedFormattedInformation.length, 8)
   })
-});
+})
 
 describe('evaluateAvailability', () => {
   it ('only return the names of the campsites that don\'t create a one day gap', () => {
@@ -55,4 +55,4 @@ describe('evaluateAvailability', () => {
     assert.isArray(expectedAvailableDates)
     assert.deepEqual(expectedAvailableDates, ["Comfy Cabin", "Rickety Cabin", "Cabin in the Woods"])
   })
-});
+})
