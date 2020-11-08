@@ -53,16 +53,18 @@ const formatDates = (reservationData) => {
   return reservationDates
 }
 
-const updateDom = (availableSites) => {
-  availableSites.forEach(site => {
-    availableCampsiteSection.insertAdjacentHTML("afterbegin", `<li>${site}</li>`)
-  })
-}
+
 if (typeof window !== "undefined") {
   window.addEventListener("load", () => {
     
     const availableCampsiteSection = document.querySelector('.campsites-section')
     const reservationFileInput = document.querySelector(".reservation-data");
+    
+    const updateDom = (availableSites) => {
+      availableSites.forEach(site => {
+        availableCampsiteSection.insertAdjacentHTML("afterbegin", `<li>${site}</li>`)
+      })
+    }
     
     if (reservationFileInput) {
       reservationFileInput.addEventListener("change", () => {
@@ -80,4 +82,5 @@ if (typeof window !== "undefined") {
     }
   });
 }
+
 module.exports = {evaluateAvailability, formatDates}
