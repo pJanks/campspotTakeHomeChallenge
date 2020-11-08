@@ -53,6 +53,6 @@ describe('evaluateAvailability', () => {
     const expectedFormattedInformation = app.formatDates(reservationData)
     const expectedAvailableDates = app.evaluateAvailability(expectedFormattedInformation)
     assert.isArray(expectedAvailableDates)
-    assert.deepEqual(expectedAvailableDates, ["Comfy Cabin", "Rickety Cabin", "Cabin in the Woods"])
+    assert.deepEqual(expectedAvailableDates, ["Cabin in the Woods", "Rickety Cabin", "Comfy Cabin"])
   })
 })
