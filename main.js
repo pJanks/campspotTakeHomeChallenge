@@ -35,8 +35,8 @@ const evaluateAvailability = (campsiteBookingData) => {
 }
 
 const formatDates = (reservationData) => {
-  const userStartDate = new Date(reservationData.search.startDate + "T00:00:00");
-  const userEndDate = new Date(reservationData.search.endDate + "T00:00:00");
+  const userStartDate = new Date(reservationData.search.startDate + "T00:00:00")
+  const userEndDate = new Date(reservationData.search.endDate + "T00:00:00")
   const reservationDates = reservationData.reservations.map(reservation => {
     const reservationStartDate = new Date(reservation.startDate)
     const reservationEndDate = new Date(reservation.endDate)
@@ -58,7 +58,7 @@ if (typeof window !== "undefined") {
   window.addEventListener("load", () => {
     
     const availableCampsiteSection = document.querySelector('.campsites-section')
-    const reservationFileInput = document.querySelector(".reservation-data");
+    const reservationFileInput = document.querySelector(".reservation-data")
     
     const updateDom = (availableSites) => {
       availableSites.forEach(site => {
@@ -69,18 +69,18 @@ if (typeof window !== "undefined") {
     if (reservationFileInput) {
       reservationFileInput.addEventListener("change", () => {
         if (reservationFileInput.files.length > 0) {
-          const reader = new FileReader();
+          const reader = new FileReader()
           reader.addEventListener("load", () => {
-            const result = JSON.parse(reader.result);
-            const reservationData = formatDates(result);
+            const result = JSON.parse(reader.result)
+            const reservationData = formatDates(result)
             const availableSites = evaluateAvailability(reservationData)
             updateDom(availableSites)
-          });
-          reader.readAsText(reservationFileInput.files[0]);
+          })
+          reader.readAsText(reservationFileInput.files[0])
         }
-      });
+      })
     }
-  });
+  })
 }
 
 module.exports = {evaluateAvailability, formatDates}
