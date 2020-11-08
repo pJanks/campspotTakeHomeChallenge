@@ -1,7 +1,7 @@
 # Campspot Take Home Challenge
 
 ## Description:
-A small scale app that can avoid creating one-day gaps in reservations of campsites based on a user's requested dates and current reservations provided data in a `.json` file uploaded to the app.
+A small scale app that can avoid creating one-day gaps in reservations of campsites based on a user's requested dates and current reservations provided in a `.json` file uploaded to the app.
 
 ## How to set up the application:
 1. Clone down this repo to your local machine.
