@@ -31,7 +31,7 @@ const evaluateAvailability = (campsiteBookingData) => {
       }
     })
   })
-  return result
+  return result.reverse()
 }
 
 const formatDates = (reservationData) => {
